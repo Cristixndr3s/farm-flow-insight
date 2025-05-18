@@ -10,9 +10,9 @@ import { Link, useNavigate } from 'react-router-dom';
 // Mock data for demonstration - in a real app, this would come from an API
 const mockFinancialData = {
   summary: {
-    initialInvestment: 15000,
-    projectedRevenue: 28000,
-    expectedProfit: 13000,
+    initialInvestment: 15000000,
+    projectedRevenue: 28000000,
+    expectedProfit: 13000000,
     roi: 86.7,
     cashFlowStatus: 'Positivo',
     riskLevel: 'Medio'

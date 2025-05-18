@@ -1,23 +1,24 @@
-# Utilizar la imagen base de Node.js
-FROM node:18-alpine
-
-# Establecer el directorio de trabajo
+# Etapa de construcción
+FROM node:18-alpine AS builder
 WORKDIR /app
-
-# Copiar el package.json y el package-lock.json
-COPY package*.json ./
-
-# Instalar las dependencias
+COPY package.json package-lock.json ./
 RUN npm install
-
-# Copiar el resto del código
 COPY . .
-
-# Construir la aplicación
 RUN npm run build
 
-# Exponer el puerto 4173 (Vite preview usa este puerto)
-EXPOSE 4173
+# Etapa de producción
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+EXPOSE 80
 
-# Comando para iniciar la aplicación
-CMD ["npm", "start"]
+# Archivo de configuración de Nginx para servir React
+RUN echo 'server { \
+    listen 80; \
+    root /usr/share/nginx/html; \
+    index index.html; \
+    location / { \
+        try_files $uri /index.html; \
+    } \
+}' > /etc/nginx/conf.d/default.conf
+
+CMD ["nginx", "-g", "daemon off;"]
