@@ -1,29 +1,23 @@
-# Etapa 1: Construcción de la aplicación
-FROM node:18-alpine AS builder
+# Utilizar la imagen base de Node.js
+FROM node:18-alpine
 
-# Crear directorio de trabajo
+# Establecer el directorio de trabajo
 WORKDIR /app
 
-# Copiar archivos de configuración
-COPY package.json package-lock.json ./
+# Copiar el package.json y el package-lock.json
+COPY package*.json ./
 
-# Instalar dependencias
+# Instalar las dependencias
 RUN npm install
 
-# Copiar el resto del código fuente
+# Copiar el resto del código
 COPY . .
 
 # Construir la aplicación
 RUN npm run build
 
-# Etapa 2: Servir la aplicación
-FROM nginx:stable-alpine
+# Exponer el puerto 4173 (Vite preview usa este puerto)
+EXPOSE 4173
 
-# Copiar archivos generados desde la etapa anterior
-COPY --from=builder /app/build /usr/share/nginx/html
-
-# Exponer el puerto 80
-EXPOSE 80
-
-# Comando por defecto para iniciar el servidor
-CMD ["nginx", "-g", "daemon off;"]
+# Comando para iniciar la aplicación
+CMD ["npm", "start"]
