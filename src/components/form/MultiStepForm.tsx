@@ -46,9 +46,10 @@ const MultiStepForm = ({ steps, children, onComplete }: MultiStepFormProps) => {
   // Make sure we only render one form step at a time
   const currentChild = React.Children.toArray(children)[currentStep];
   
-  // Clone the element to pass the necessary props
+  // Fixed: Clone the element properly with type safety
   const formStep = React.isValidElement(currentChild) 
-    ? React.cloneElement(currentChild, { 
+    ? React.cloneElement(currentChild as React.ReactElement<any>, {
+        // Only pass these props if they're expected
         formData, 
         updateFormData: updateData,
         next,

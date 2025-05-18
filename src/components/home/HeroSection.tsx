@@ -19,7 +19,7 @@ const HeroSection = () => {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button size="lg" asChild>
-              <Link to="/plan/new" className="flex items-center">
+              <Link to="/financial-report" className="flex items-center">
                 Crear Nuevo Plan Financiero
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>

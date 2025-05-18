@@ -13,7 +13,7 @@ const Index = () => {
       title: "Crear un Plan Financiero",
       description: "Ingresa tus datos financieros para recibir un plan personalizado y recomendaciones adaptadas a tu actividad agrícola.",
       icon: <FileText className="h-6 w-6 text-primary" />,
-      linkTo: "/plan/new",
+      linkTo: "/financial-report",
       linkText: "Crear plan"
     },
     {
