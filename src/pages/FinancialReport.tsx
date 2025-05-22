@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { Button } from '@/components/ui/button';
@@ -15,7 +14,7 @@ const mockFinancialData = {
     expectedProfit: 13000000,
     roi: 86.7,
     cashFlowStatus: 'Positivo',
-    riskLevel: 'Medio'
+    riskLevel: 'Positivo'
   },
   recommendations: [
     {
@@ -35,38 +34,54 @@ const mockFinancialData = {
     }
   ],
   cashFlowData: [
-    { month: 'Ene', ingresos: 0, egresos: 5000, balance: -5000 },
-    { month: 'Feb', ingresos: 0, egresos: 2000, balance: -7000 },
-    { month: 'Mar', ingresos: 0, egresos: 2000, balance: -9000 },
-    { month: 'Abr', ingresos: 0, egresos: 2000, balance: -11000 },
-    { month: 'May', ingresos: 0, egresos: 2000, balance: -13000 },
-    { month: 'Jun', ingresos: 3000, egresos: 1000, balance: -11000 },
-    { month: 'Jul', ingresos: 5000, egresos: 1000, balance: -7000 },
-    { month: 'Ago', ingresos: 8000, egresos: 1000, balance: 0 },
-    { month: 'Sep', ingresos: 12000, egresos: 1000, balance: 11000 },
-    { month: 'Oct', ingresos: 0, egresos: 1000, balance: 10000 },
-    { month: 'Nov', ingresos: 0, egresos: 1000, balance: 9000 },
-    { month: 'Dic', ingresos: 0, egresos: 1000, balance: 8000 },
+  { "month": "Ene", "ingresos": 2400000, "egresos": 1000000, "balance": 1400000 },
+  { "month": "Feb", "ingresos": 2300000, "egresos": 1000000, "balance": 1300000 },
+  { "month": "Mar", "ingresos": 2500000, "egresos": 1100000, "balance": 1400000 },
+  { "month": "Abr", "ingresos": 2200000, "egresos": 1000000, "balance": 1200000 },
+  { "month": "May", "ingresos": 2600000, "egresos": 1100000, "balance": 1500000 },
+  { "month": "Jun", "ingresos": 2700000, "egresos": 1000000, "balance": 1700000 },
+  { "month": "Jul", "ingresos": 2500000, "egresos": 900000,  "balance": 1600000 },
+  { "month": "Ago", "ingresos": 2800000, "egresos": 1200000, "balance": 1600000 },
+  { "month": "Sep", "ingresos": 2600000, "egresos": 1000000, "balance": 1600000 },
+  { "month": "Oct", "ingresos": 2700000, "egresos": 900000,  "balance": 1800000 },
   ],
 };
 
 const FinancialReport = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
-  const [reportData, setReportData] = useState<typeof mockFinancialData | null>(null);
+const [reportData, setReportData] = useState(null);
 
-  useEffect(() => {
-    // Simulating API call to fetch data
-    const fetchData = async () => {
-      // In a real app, this would be an API call
-      setTimeout(() => {
-        setReportData(mockFinancialData);
-        setIsLoading(false);
-      }, 2000); // Simulate 2 seconds loading
-    };
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const [cashFlowRes, resultadoRes] = await Promise.all([
+        fetch('/data/cashflow.json'),
+        fetch('/data/resultado.json'),
+      ]);
 
-    fetchData();
-  }, []);
+      const cashFlow = await cashFlowRes.json();
+      const resultado = await resultadoRes.json();
+
+      const data = {
+        ...mockFinancialData,
+        cashFlowData: cashFlow,
+        recommendations: resultado.recommendations, // sobrescribe recomendaciones
+        riesgo: resultado.riesgo // nuevo campo
+      };
+
+      setReportData(data);
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error cargando archivos JSON:', error);
+      setIsLoading(false);
+    }
+  };
+
+  fetchData();
+}, []);
+
+
 
   const handleDownloadReport = () => {
     // Logic to download the report as PDF would go here
@@ -228,10 +243,7 @@ const FinancialReport = () => {
                     <div className="ml-3">
                       <h3 className="text-sm font-medium text-amber-800">Análisis de riesgo</h3>
                       <div className="mt-2 text-sm text-amber-700">
-                        <p>
-                          Los primeros 5 meses muestran un flujo de caja negativo. Se recomienda asegurar un fondo de
-                          reserva de al menos $13,000 para cubrir este período o considerar financiamiento adicional.
-                        </p>
+                        <p>{reportData?.riesgo}</p>
                       </div>
                     </div>
                   </div>

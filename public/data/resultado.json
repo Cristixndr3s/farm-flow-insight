@@ -1,0 +1,20 @@
+{
+  "riesgo": "El análisis de riesgo indica una posible inestabilidad en los ingresos y egresos, ya que se aprecia una alternancia entre meses con resultados positivos y negativos. Esto podría generar un riesgo financiero si no se toman medidas preventivas. Además, en algunos meses el desequilibrio es de -100000, lo que representa un riesgo significativo si esta situación se prolonga.",
+  "recommendations": [
+    {
+      "title": "Diversificar fuentes de ingreso",
+      "description": "Buscar nuevas fuentes de ingreso para disminuir la dependencia de las actuales y aumentar la solidez financiera de la empresa.",
+      "priority": "Alta"
+    },
+    {
+      "title": "Reducir egresos",
+      "description": "Analizar los egresos y encontrar formas de reducirlos sin afectar la calidad del producto o servicio.",
+      "priority": "Media"
+    },
+    {
+      "title": "Construir reservas",
+      "description": "Ahorrar dinero en los meses con balances positivos, con el fin de tener reservas para los meses con balances negativos.",
+      "priority": "Baja"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+[
+  { "month": "Ene", "ingresos": 1800000, "egresos": 1700000, "balance": 100000 },
+  { "month": "Feb", "ingresos": 2000000, "egresos": 1900000, "balance": 100000 },
+  { "month": "Mar", "ingresos": 2100000, "egresos": 2200000, "balance": -100000 },
+  { "month": "Abr", "ingresos": 1900000, "egresos": 1800000, "balance": 100000 },
+  { "month": "May", "ingresos": 2000000, "egresos": 2000000, "balance": 0 },
+  { "month": "Jun", "ingresos": 2100000, "egresos": 2200000, "balance": -100000 },
+  { "month": "Jul", "ingresos": 1900000, "egresos": 2000000, "balance": -100000 },
+  { "month": "Ago", "ingresos": 2100000, "egresos": 2100000, "balance": 0 },
+  { "month": "Sep", "ingresos": 2000000, "egresos": 1900000, "balance": 100000 },
+  { "month": "Oct", "ingresos": 1900000, "egresos": 2000000, "balance": -100000 }
+]
+

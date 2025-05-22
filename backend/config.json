@@ -1,8 +1,0 @@
-{
-  "investment_range": [10000000, 20000000],
-  "production_range": [8000, 15000],
-  "price_per_unit_range": [2500, 3000],
-  "fixed_costs": 2000,
-  "variable_costs": 1000,
-  "months_of_harvest": ["Jun", "Jul", "Ago", "Sep"]
-}
