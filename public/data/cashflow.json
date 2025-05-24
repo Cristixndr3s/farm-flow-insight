@@ -1,13 +1,14 @@
 [
-  { "month": "Ene", "ingresos": 1800000, "egresos": 1700000, "balance": 100000 },
-  { "month": "Feb", "ingresos": 2000000, "egresos": 1900000, "balance": 100000 },
-  { "month": "Mar", "ingresos": 2100000, "egresos": 2200000, "balance": -100000 },
-  { "month": "Abr", "ingresos": 1900000, "egresos": 1800000, "balance": 100000 },
-  { "month": "May", "ingresos": 2000000, "egresos": 2000000, "balance": 0 },
-  { "month": "Jun", "ingresos": 2100000, "egresos": 2200000, "balance": -100000 },
-  { "month": "Jul", "ingresos": 1900000, "egresos": 2000000, "balance": -100000 },
-  { "month": "Ago", "ingresos": 2100000, "egresos": 2100000, "balance": 0 },
-  { "month": "Sep", "ingresos": 2000000, "egresos": 1900000, "balance": 100000 },
-  { "month": "Oct", "ingresos": 1900000, "egresos": 2000000, "balance": -100000 }
+  { "month": "Ene", "ingresos": 1200000, "egresos": 1100000, "balance": 100000 },
+  { "month": "Feb", "ingresos": 1000000, "egresos": 1050000, "balance": -50000 },
+  { "month": "Mar", "ingresos": 1300000, "egresos": 1250000, "balance": 50000 },
+  { "month": "Abr", "ingresos": 900000,  "egresos": 1100000, "balance": -200000 },
+  { "month": "May", "ingresos": 950000,  "egresos": 1000000, "balance": -50000 },
+  { "month": "Jun", "ingresos": 1150000, "egresos": 1200000, "balance": -50000 },
+  { "month": "Jul", "ingresos": 1100000, "egresos": 1150000, "balance": -50000 },
+  { "month": "Ago", "ingresos": 1080000, "egresos": 1120000, "balance": -40000 },
+  { "month": "Sep", "ingresos": 1050000, "egresos": 1100000, "balance": -50000 },
+  { "month": "Oct", "ingresos": 1000000, "egresos": 1050000, "balance": -50000 },
+  { "month": "Nov", "ingresos": 1300000, "egresos": 1250000, "balance": 50000 },
+  { "month": "Dic", "ingresos": 1200000, "egresos": 1100000, "balance": 100000 }
 ]
-

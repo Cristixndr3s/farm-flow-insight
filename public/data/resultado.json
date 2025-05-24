@@ -1,19 +1,29 @@
 {
-  "riesgo": "El análisis de riesgo indica una posible inestabilidad en los ingresos y egresos, ya que se aprecia una alternancia entre meses con resultados positivos y negativos. Esto podría generar un riesgo financiero si no se toman medidas preventivas. Además, en algunos meses el desequilibrio es de -100000, lo que representa un riesgo significativo si esta situación se prolonga.",
+  "riesgo": "El análisis de este flujo de caja muestra que hay una tendencia a gastar más de lo que se ingresa, lo que lleva a un saldo negativo en la mayoría de los meses. Esto indica un riesgo financiero para la entidad o individuo que esté gestionando estos ingresos y egresos. El riesgo se intensifica en ciertos meses donde el déficit es más grande, y aunque existen meses con superávit, no son suficientes para compensar los déficits. Además, la falta de un patrón estable en los ingresos puede dificultar la planificación de gastos y la toma de decisiones financieras acertadas.",
   "recommendations": [
     {
-      "title": "Diversificar fuentes de ingreso",
-      "description": "Buscar nuevas fuentes de ingreso para disminuir la dependencia de las actuales y aumentar la solidez financiera de la empresa.",
+      "title": "Reducir gastos",
+      "description": "Los egresos regulares parecen ser mayores a los ingresos. Buscar la forma de reducir los gastos puede ayudar a mantener un saldo positivo y reducir el riesgo financiero. Priorizar los gastos y recortar aquellos que no sean necesarios puede ser una estrategia efectiva.",
       "priority": "Alta"
     },
     {
-      "title": "Reducir egresos",
-      "description": "Analizar los egresos y encontrar formas de reducirlos sin afectar la calidad del producto o servicio.",
+      "title": "Establecer un presupuesto",
+      "description": "Debido a que los ingresos varían, es crucial crear un presupuesto que se ajuste a los ingresos más bajos del flujo de caja. Esto ayudará a garantizar que los gastos nunca excedan los ingresos y, además, permitirá ahorrar en meses de ingresos más altos.",
+      "priority": "Alta"
+    },
+    {
+      "title": "Crear una reserva de emergencia",
+      "description": "Con el fin de hacer frente a los meses deficitarios, es esencial contar con ahorros que sirvan como reserva de emergencia. Asimismo, éstos pueden utilizarse para aprovechar oportunidades de inversión.",
       "priority": "Media"
     },
     {
-      "title": "Construir reservas",
-      "description": "Ahorrar dinero en los meses con balances positivos, con el fin de tener reservas para los meses con balances negativos.",
+      "title": "Aumentar ingresos",
+      "description": "Debido a que los ingresos variedad considerablemente, buscar formas de aumentar los ingresos regulares puede ayudar a garantizar la estabilidad financiera. Esto podría incluir la diversificación de las fuentes de ingresos o el desarrollo de habilidades para aumentar los ingresos existentes.",
+      "priority": "Media"
+    },
+    {
+      "title": "Revisar los estados financieros regularmente",
+      "description": "La revisión regular de los estados financieros puede ayudar a identificar tendencias y problemas antes de que empeoren. Esto llevará a un mayor control sobre las finanzas y a la capacidad de tomar decisiones más informadas.",
       "priority": "Baja"
     }
   ]
